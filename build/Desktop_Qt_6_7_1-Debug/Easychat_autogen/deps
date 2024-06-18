@@ -4,12 +4,15 @@ Easychat_autogen/timestamp: \
 	/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
+	/home/kechang/Project/Easychat/chatwindow.cpp \
+	/home/kechang/Project/Easychat/chatwindow.h \
 	/home/kechang/Project/Easychat/login_window.cpp \
 	/home/kechang/Project/Easychat/login_window.h \
 	/home/kechang/Project/Easychat/main.cpp \
 	/home/kechang/Project/Easychat/signupwindow.cpp \
 	/home/kechang/Project/Easychat/signupwindow.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
+	/opt/Qt/6.7.1/gcc_64/include/QtCore/QIODevice \
 	/opt/Qt/6.7.1/gcc_64/include/QtCore/QList \
 	/opt/Qt/6.7.1/gcc_64/include/QtCore/QMetaType \
 	/opt/Qt/6.7.1/gcc_64/include/QtCore/QObject \
@@ -153,23 +156,31 @@ Easychat_autogen/timestamp: \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qkeysequence.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qpaintdevice.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qpalette.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtGui/qpen.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qpixelformat.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qpixmap.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qpolygon.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qregion.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qrgb.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qrgba64.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtextcursor.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtextdocument.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtextformat.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtextoption.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtgui-config.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtguiexports.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtguiglobal.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qtransform.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtGui/qwindowdefs.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QNetworkAccessManager \
+	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QNetworkReply \
+	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QNetworkRequest \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QSslConfiguration \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qabstractsocket.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qhostaddress.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qnetworkreply.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qnetworkrequest.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qssl.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslcertificate.h \
@@ -182,11 +193,25 @@ Easychat_autogen/timestamp: \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkexports.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QDialog \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QLineEdit \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QPushButton \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QTextEdit \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QVBoxLayout \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qboxlayout.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qdialog.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qframe.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qgridlayout.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qlayout.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qlineedit.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qmainwindow.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qpushbutton.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtabwidget.h \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtextedit.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -718,6 +743,7 @@ Easychat_autogen/timestamp: \
 	/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
 	/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
 	/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+	/home/kechang/Project/Easychat/chatwindow.ui \
 	/home/kechang/Project/Easychat/login_window.ui \
 	/home/kechang/Project/Easychat/signupwindow.ui \
 	/opt/Qt/Tools/CMake/bin/cmake

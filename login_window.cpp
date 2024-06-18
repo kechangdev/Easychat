@@ -13,6 +13,7 @@
 login_window::login_window(QWidget *parent) : QMainWindow(parent), ui(new Ui::login_window), networkManager(new QNetworkAccessManager(this)) {
     setFixedSize(651, 429);
     ui->setupUi(this);
+
     connect(ui->loginwindow_login_button, &QPushButton::clicked, this, &login_window::onLoginButtonClicked);
     connect(networkManager, &QNetworkAccessManager::finished, this, &login_window::onReplyFinished);
     connect(ui->signup_button, &QPushButton::clicked, this, &::login_window::onSignupLinkClicked);
@@ -105,7 +106,8 @@ void login_window::onReplyFinished(QNetworkReply *reply) {
             //
             //
         }
-    } else {
+    }
+    else {
         dbg("Error:" + reply->errorString());
         dbg("Login failed!");
     }

@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-8d6654002a8755a2e150.json",
+					"jsonFile" : "directory-.-Debug-06d84c59176c10e1ca4a.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Easychat::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Easychat-Debug-977a23717237da9e3576.json",
+					"jsonFile" : "target-Easychat-Debug-b3e519534fe74ca56c75.json",
 					"name" : "Easychat",
 					"projectIndex" : 0
 				},

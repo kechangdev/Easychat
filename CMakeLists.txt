@@ -18,6 +18,12 @@ set(PROJECT_SOURCES
         login_window.cpp
         login_window.h
         login_window.ui
+        chatwindow.cpp
+        chatwindow.h
+        chatwindow.ui
+        signupwindow.cpp
+        signupwindow.h
+        signupwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -25,6 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         signupwindow.h signupwindow.cpp signupwindow.ui
+        chatwindow.h chatwindow.cpp chatwindow.ui
     )
 else()
     if(ANDROID)

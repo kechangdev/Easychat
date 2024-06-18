@@ -394,6 +394,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/kechang/Project/Easychat/chatwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_chatwindow.cpp",
+			null
+		],
+		[
 			"/home/kechang/Project/Easychat/login_window.h",
 			"MU",
 			"EWIEGA46WW/moc_login_window.cpp",
@@ -466,6 +472,7 @@
 	"SETTINGS_FILE" : "/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/Easychat_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/kechang/Project/Easychat/chatwindow.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/login_window.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/main.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/signupwindow.cpp", "MU", null ]
