@@ -355,6 +355,36 @@
 		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake",
 		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
+		"/opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake",
+		"/opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake",
+		"/opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake",
+		"/opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake",
+		"/opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake",
+		"/opt/Qt/6.7.1/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake",
 		"/opt/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/kechang/Project/Easychat",
@@ -368,12 +398,18 @@
 			"MU",
 			"EWIEGA46WW/moc_login_window.cpp",
 			null
+		],
+		[
+			"/home/kechang/Project/Easychat/signupwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_signupwindow.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NETWORK_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -388,6 +424,7 @@
 		"/opt/Qt/6.7.1/gcc_64/mkspecs/linux-g++",
 		"/opt/Qt/6.7.1/gcc_64/include/QtWidgets",
 		"/opt/Qt/6.7.1/gcc_64/include/QtGui",
+		"/opt/Qt/6.7.1/gcc_64/include/QtNetwork",
 		"/usr/include",
 		"/usr/include/c++/11",
 		"/usr/include/x86_64-linux-gnu/c++/11",
@@ -430,7 +467,8 @@
 	"SOURCES" : 
 	[
 		[ "/home/kechang/Project/Easychat/login_window.cpp", "MU", null ],
-		[ "/home/kechang/Project/Easychat/main.cpp", "MU", null ]
+		[ "/home/kechang/Project/Easychat/main.cpp", "MU", null ],
+		[ "/home/kechang/Project/Easychat/signupwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

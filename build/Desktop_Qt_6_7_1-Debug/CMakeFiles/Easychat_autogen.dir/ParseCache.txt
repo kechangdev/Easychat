@@ -3,6 +3,15 @@
  mmc:Q_OBJECT
  mdp:/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h
  mdp:/home/kechang/Project/Easychat/login_window.h
+ mdp:/home/kechang/Project/Easychat/signupwindow.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QList
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QMetaType
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QObject
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QSharedDataPointer
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QString
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QUrl
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/QVariant
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/q20functional.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/q20memory.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/q20type_traits.h
@@ -21,6 +30,7 @@
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearrayalgorithms.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearraylist.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearrayview.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qcalendar.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qchar.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qcompare.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qcompare_impl.h
@@ -32,8 +42,10 @@
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qcontainerinfo.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qcontainertools_impl.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qcontiguouscache.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qcryptographichash.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qdarwinhelpers.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qdatastream.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qdatetime.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qdebug.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qendian.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qexceptionhandling.h
@@ -47,12 +59,14 @@
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qglobalstatic.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qhash.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qhashfunctions.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qiodevice.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qiodevicebase.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qiterable.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qiterator.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qlatin1stringview.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qline.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qlist.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qlocale.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qlogging.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qmalloc.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qmap.h
@@ -114,6 +128,7 @@
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qtversionchecks.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qtypeinfo.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qtypes.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qurl.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qutf8stringview.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qvariant.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/qvarlengtharray.h
@@ -144,7 +159,26 @@
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtGui/qtguiglobal.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtGui/qtransform.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtGui/qwindowdefs.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QNetworkAccessManager
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QSslConfiguration
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qabstractsocket.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qhostaddress.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qnetworkaccessmanager.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qnetworkrequest.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qssl.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslcertificate.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslconfiguration.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslerror.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslsocket.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtcpsocket.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetwork-config.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkexports.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkglobal.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QDialog
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qdialog.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qmainwindow.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtabwidget.h
@@ -408,12 +442,10 @@
 /home/kechang/Project/Easychat/login_window.cpp
  uic:./ui_login_window.h
 /home/kechang/Project/Easychat/main.cpp
-/home/kechang/Project/Easychat/testwindow.cpp
- uic:./ui_testwindow.h
-/home/kechang/Project/Easychat/testwindow.h
+/home/kechang/Project/Easychat/signupwindow.h
  mmc:Q_OBJECT
  mdp:/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h
- mdp:/home/kechang/Project/Easychat/testwindow.h
+ mdp:/home/kechang/Project/Easychat/signupwindow.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/q20functional.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/q20memory.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtCore/q20type_traits.h
@@ -555,10 +587,9 @@
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtGui/qtguiglobal.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtGui/qtransform.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtGui/qwindowdefs.h
- mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow
- mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qmainwindow.h
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QDialog
+ mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qdialog.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h
- mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtabwidget.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgets-config.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsexports.h
  mdp:/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h
@@ -816,3 +847,5 @@
  mdp:/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h
  mdp:/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
+/home/kechang/Project/Easychat/signupwindow.cpp
+ uic:ui_signupwindow.h

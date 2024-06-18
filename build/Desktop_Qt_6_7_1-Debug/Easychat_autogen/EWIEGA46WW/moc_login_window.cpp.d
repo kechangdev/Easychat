@@ -1,5 +1,14 @@
 /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/EWIEGA46WW/moc_login_window.cpp: /home/kechang/Project/Easychat/login_window.h \
   /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
+  /home/kechang/Project/Easychat/signupwindow.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QList \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QMetaType \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QObject \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QSharedDataPointer \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QString \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QUrl \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QVariant \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/q20functional.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/q20memory.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/q20type_traits.h \
@@ -18,6 +27,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearraylist.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearrayview.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qcalendar.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qchar.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcompare.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcompare_impl.h \
@@ -29,8 +39,10 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcontainerinfo.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcontainertools_impl.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcontiguouscache.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qcryptographichash.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qdarwinhelpers.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qdatastream.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qdatetime.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qdebug.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qendian.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qexceptionhandling.h \
@@ -44,12 +56,14 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qglobalstatic.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qhash.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qhashfunctions.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qiodevice.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qiodevicebase.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qiterable.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qiterator.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qlatin1stringview.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qline.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qlist.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qlocale.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qlogging.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qmalloc.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qmap.h \
@@ -111,6 +125,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtversionchecks.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtypeinfo.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtypes.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qurl.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qutf8stringview.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qvariant.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qvarlengtharray.h \
@@ -141,7 +156,26 @@
   /opt/Qt/6.7.1/gcc_64/include/QtGui/qtguiglobal.h \
   /opt/Qt/6.7.1/gcc_64/include/QtGui/qtransform.h \
   /opt/Qt/6.7.1/gcc_64/include/QtGui/qwindowdefs.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/QNetworkAccessManager \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/QSslConfiguration \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qabstractsocket.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qhostaddress.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qnetworkrequest.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qssl.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslcertificate.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslconfiguration.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslerror.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qsslsocket.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtcpsocket.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetwork-config.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkexports.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QDialog \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qdialog.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qmainwindow.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtabwidget.h \

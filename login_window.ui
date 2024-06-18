@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Login</string>
+   <string> </string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="title_widget">
