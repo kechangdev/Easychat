@@ -1,5 +1,6 @@
 #include "login_window.h"
 #include "./ui_login_window.h"
+#include "signupwindow.h"
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkAccessManager>
@@ -14,24 +15,18 @@ login_window::login_window(QWidget *parent) : QMainWindow(parent), ui(new Ui::lo
     ui->setupUi(this);
     connect(ui->loginwindow_login_button, &QPushButton::clicked, this, &login_window::onLoginButtonClicked);
     connect(networkManager, &QNetworkAccessManager::finished, this, &login_window::onReplyFinished);
+    connect(ui->signup_button, &QPushButton::clicked, this, &::login_window::onSignupLinkClicked);
 
-    ui->signup_link = new QLabel("Don't have an account? <a href='#'>Sign Up</a>", this);
-    ui->signup_link->setTextFormat(Qt::RichText);
-    ui->signup_link->setTextInteractionFlags(Qt::TextBrowserInteraction);
-    ui->signup_link->setOpenExternalLinks(false);
-    connect(ui->signup_link, &QLabel::linkActivated, this, &::login_window::onSignupLinkClicked);
+    signupwindow = new SignupWindow(this);
 }
 
 login_window::~login_window() {
+    delete signupwindow;
     delete ui;
 }
 
-void login_window::dbg(QString str) {
-    qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
-}
-void login_window::onSignupLinkClicked(const QString &link) {
+void login_window::onSignupLinkClicked() {
     dbg("Show Signup Window");
-    if (!signupwindow) signupwindow = new SignupWindow(this);
     signupwindow->show();
 }
 
@@ -115,4 +110,8 @@ void login_window::onReplyFinished(QNetworkReply *reply) {
         dbg("Login failed!");
     }
     reply->deleteLater();
+}
+
+void login_window::dbg(QString str) {
+    qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
 }

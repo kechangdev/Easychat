@@ -145,10 +145,10 @@
    <widget class="QWidget" name="signup_widget">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>360</y>
-      <width>231</width>
-      <height>22</height>
+      <x>190</x>
+      <y>350</y>
+      <width>256</width>
+      <height>27</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="Loginwindow_Group_Signup">
@@ -173,18 +173,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="signup_link">
+      <widget class="QPushButton" name="signup_button">
        <property name="text">
         <string>Sign Up</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::RichText</enum>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading</set>
-       </property>
-       <property name="openExternalLinks">
-        <bool>true</bool>
        </property>
       </widget>
      </item>

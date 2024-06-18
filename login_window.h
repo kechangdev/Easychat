@@ -24,11 +24,11 @@ private slots:
     void onLoginButtonClicked();
     void onReplyFinished(QNetworkReply *reply);
     bool login_Response_Check(QByteArray& responseData);
-    void onSignupLinkClicked(const QString &link);
+    void onSignupLinkClicked();
 
 private:
     Ui::login_window *ui;
-    SignupWindow * signupwindow;
+    SignupWindow *signupwindow;
     QNetworkAccessManager *networkManager;
     QString Server_URL = "http://kechang.fun";
 };

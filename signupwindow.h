@@ -7,8 +7,7 @@ namespace Ui {
 class SignupWindow;
 }
 
-class SignupWindow : public QDialog
-{
+class SignupWindow : public QDialog {
     Q_OBJECT
 
 public:
