@@ -1,0 +1,9 @@
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/Easychat.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/edit_cache.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/rebuild_cache.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/list_install_components.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/install.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/install/local.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/install/strip.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/Easychat_autogen_timestamp_deps.dir
+/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/CMakeFiles/Easychat_autogen.dir
