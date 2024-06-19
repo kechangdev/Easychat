@@ -28,7 +28,7 @@ private slots:
 private:
     Ui::SignupWindow *ui;
     QNetworkAccessManager *networkManager;
-    const QString serverUrl = "https://chat.6b.fit/";
+    const QString serverUrl = "https://chat.6b.fit";
     Notification *notification = new Notification;
 };
 
