@@ -15,7 +15,7 @@ var db *gorm.DB
 
 func init() {
     var err error
-    databaseURL := os.Getenv("DATABASE_URL")
+    databaseURL := os.Getenv("mysql://username:password@hostname:port/database_name")
     if databaseURL == "" {
         log.Fatalf("DATABASE_URL environment variable not set")
     }
