@@ -165,7 +165,7 @@ This repository contains a Go-based server implementation for a user management 
 1. **Clone the repository**:
 
    ```sh
-https://github.com/kechangdev/Easychat.git
+   https://github.com/kechangdev/Easychat.git
    cd Easychat/Serve
    ```
 
