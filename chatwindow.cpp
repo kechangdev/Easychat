@@ -1,5 +1,6 @@
 #include "chatwindow.h"
 #include "ui_chatwindow.h"
+#include "notification.h"
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QNetworkRequest>

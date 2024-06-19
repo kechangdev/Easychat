@@ -69,13 +69,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 66,
+				"line" : 69,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 49,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
@@ -277,7 +277,9 @@
 				1,
 				2,
 				5,
-				8
+				8,
+				12,
+				15
 			]
 		}
 	],
@@ -367,7 +369,9 @@
 				1,
 				2,
 				5,
-				8
+				8,
+				12,
+				15
 			]
 		},
 		{
@@ -378,8 +382,12 @@
 				6,
 				9,
 				11,
-				12,
-				13
+				14,
+				17,
+				18,
+				19,
+				20,
+				21
 			]
 		},
 		{
@@ -389,14 +397,16 @@
 				4,
 				7,
 				10,
-				14
+				13,
+				16,
+				22
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				15
+				23
 			]
 		}
 	],
@@ -464,6 +474,38 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "userlist.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "userlist.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "userlist.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "notification.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "notification.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "notification.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/include/ui_login_window.h",
@@ -479,6 +521,18 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/include/ui_signupwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/include/ui_userlist.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/include/ui_notification.h",
 			"sourceGroupIndex" : 1
 		},
 		{

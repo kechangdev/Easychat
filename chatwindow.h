@@ -1,6 +1,7 @@
 #ifndef CHATWINDOW_H
 #define CHATWINDOW_H
 
+#include "notification.h"
 #include <QMainWindow>
 #include <QTextEdit>
 #include <QLineEdit>
@@ -22,6 +23,9 @@ class ChatWindow : public QMainWindow
 
 public:
     ChatWindow(const QString &username, QWidget *parent = nullptr);
+    static void dbg(QString str) {
+        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
+    }
     ~ChatWindow();
 
 private slots:

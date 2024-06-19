@@ -9,6 +9,8 @@ Easychat_autogen/timestamp: \
 	/home/kechang/Project/Easychat/login_window.cpp \
 	/home/kechang/Project/Easychat/login_window.h \
 	/home/kechang/Project/Easychat/main.cpp \
+	/home/kechang/Project/Easychat/notification.cpp \
+	/home/kechang/Project/Easychat/notification.h \
 	/home/kechang/Project/Easychat/signupwindow.cpp \
 	/home/kechang/Project/Easychat/signupwindow.h \
 	/home/kechang/Project/Easychat/userlist.cpp \
@@ -210,6 +212,7 @@ Easychat_autogen/timestamp: \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QPushButton \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QTextEdit \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QVBoxLayout \
+	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/QWidget \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractbutton.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 	/opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractitemview.h \
@@ -768,6 +771,7 @@ Easychat_autogen/timestamp: \
 	/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
 	/home/kechang/Project/Easychat/chatwindow.ui \
 	/home/kechang/Project/Easychat/login_window.ui \
+	/home/kechang/Project/Easychat/notification.ui \
 	/home/kechang/Project/Easychat/signupwindow.ui \
 	/home/kechang/Project/Easychat/userlist.ui \
 	/opt/Qt/Tools/CMake/bin/cmake

@@ -406,6 +406,12 @@
 			null
 		],
 		[
+			"/home/kechang/Project/Easychat/notification.h",
+			"MU",
+			"EWIEGA46WW/moc_notification.cpp",
+			null
+		],
+		[
 			"/home/kechang/Project/Easychat/signupwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_signupwindow.cpp",
@@ -481,6 +487,7 @@
 		[ "/home/kechang/Project/Easychat/chatwindow.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/login_window.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/main.cpp", "MU", null ],
+		[ "/home/kechang/Project/Easychat/notification.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/signupwindow.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/userlist.cpp", "MU", null ]
 	],

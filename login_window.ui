@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string> </string>
+   <string>Login</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="title_widget">
@@ -168,14 +168,7 @@
      <item>
       <widget class="QLabel" name="signup_label">
        <property name="text">
-        <string>Don't have an account?</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="signup_button">
-       <property name="text">
-        <string>Sign Up</string>
+        <string>Don't have an account? Sign Up</string>
        </property>
       </widget>
      </item>
@@ -210,3 +203,4 @@
  <resources/>
  <connections/>
 </ui>
+

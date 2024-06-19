@@ -33,6 +33,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         signupwindow.h signupwindow.cpp signupwindow.ui
         chatwindow.h chatwindow.cpp chatwindow.ui
         userlist.h userlist.cpp userlist.ui
+        notification.h notification.cpp notification.ui
+
     )
 else()
     if(ANDROID)

@@ -1,5 +1,6 @@
 /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/EWIEGA46WW/moc_userlist.cpp: /home/kechang/Project/Easychat/userlist.h \
   /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
+  /home/kechang/Project/Easychat/notification.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QIODevice \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QList \
@@ -182,6 +183,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkglobal.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QDialog \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QListWidget \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QWidget \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractitemview.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \

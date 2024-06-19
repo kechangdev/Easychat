@@ -1,5 +1,6 @@
 /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/EWIEGA46WW/moc_login_window.cpp: /home/kechang/Project/Easychat/login_window.h \
   /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
+  /home/kechang/Project/Easychat/notification.h \
   /home/kechang/Project/Easychat/signupwindow.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QDateTime \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QDebug \
@@ -177,6 +178,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkglobal.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QDialog \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QWidget \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qdialog.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qmainwindow.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h \

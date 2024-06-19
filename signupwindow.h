@@ -1,6 +1,7 @@
 #ifndef SIGNUPWINDOW_H
 #define SIGNUPWINDOW_H
 
+#include "notification.h"
 #include <QDialog>
 #include <QDebug>
 #include <QDateTime>

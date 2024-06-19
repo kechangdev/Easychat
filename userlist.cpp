@@ -1,6 +1,7 @@
 #include "userlist.h"
 #include "ui_userlist.h"
 #include "chatwindow.h"
+#include "notification.h"
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>

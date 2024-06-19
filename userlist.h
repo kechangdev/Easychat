@@ -1,6 +1,7 @@
 #ifndef USERLIST_H
 #define USERLIST_H
 
+#include "notification.h"
 #include <QDialog>
 #include <QListWidget>
 #include <QNetworkAccessManager>
@@ -15,6 +16,9 @@ class UserList : public QDialog {
 
 public:
     explicit UserList(QWidget *parent = nullptr);
+    static void dbg(QString str) {
+        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
+    }
     ~UserList();
 
 private slots:
@@ -23,7 +27,6 @@ private slots:
 
 private:
     void fetchAccounts();
-
     Ui::UserList *ui;
     QNetworkAccessManager *networkManager;
 };

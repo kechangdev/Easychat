@@ -1,5 +1,6 @@
 #include "signupwindow.h"
 #include "ui_signupwindow.h"
+#include "notification.h"
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkRequest>

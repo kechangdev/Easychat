@@ -5,10 +5,11 @@
 #include <QString>
 #include <QNetworkAccessManager>
 #include "signupwindow.h"
+#include "notification.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class login_window;
+class login_window;
 }
 QT_END_NAMESPACE
 
@@ -17,7 +18,9 @@ class login_window : public QMainWindow {
 
 public:
     login_window(QWidget *parent = nullptr);
-    void dbg(QString str);
+    static void dbg(QString str) {
+        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
+    }
     ~login_window();
 
 private slots:
@@ -30,6 +33,6 @@ private:
     Ui::login_window *ui;
     SignupWindow *signupwindow;
     QNetworkAccessManager *networkManager;
-    QString Server_URL = "http://kechang.fun";
+    const QString serverUrl = "http://your-server-url.com";
 };
 #endif // LOGIN_WINDOW_H

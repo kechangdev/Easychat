@@ -1,5 +1,6 @@
 /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/EWIEGA46WW/moc_chatwindow.cpp: /home/kechang/Project/Easychat/chatwindow.h \
   /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
+  /home/kechang/Project/Easychat/notification.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QDateTime \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QIODevice \
@@ -190,6 +191,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QPushButton \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QTextEdit \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QVBoxLayout \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QWidget \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractbutton.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qboxlayout.h \
