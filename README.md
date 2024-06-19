@@ -27,8 +27,9 @@ Easychat is a simple chat application that consists of two main components: the 
 
 Before you begin, ensure you have met the following requirements:
 
-- Node.js installed on your machine
-- npm (Node package manager)
+- Go programming environment installed on your machine
+- Qt for C++ development environment installed on your machine
+- C++ compiler
 
 ### Installation
 
@@ -73,4 +74,4 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 ## License
 
-This project is licensed under the Apache-2.0 License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
