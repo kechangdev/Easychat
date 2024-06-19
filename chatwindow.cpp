@@ -1,14 +1,12 @@
-#include "./chatwindow.h"
+#include "chatwindow.h"
 #include "ui_chatwindow.h"
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QNetworkRequest>
 
-ChatWindow::ChatWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::ChatWindow)
-    , networkManager(new QNetworkAccessManager(this))
-{
+ChatWindow::ChatWindow(const QString &username, QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::ChatWindow), networkManager(new QNetworkAccessManager(this)), username(username) {
+
     ui->setupUi(this);
 
     // Initialize widgets
@@ -33,15 +31,15 @@ ChatWindow::ChatWindow(QWidget *parent)
     connect(sendButton, &QPushButton::clicked, this, &ChatWindow::sendMessage);
     connect(messageInput, &QLineEdit::returnPressed, this, &ChatWindow::sendMessage);
     connect(networkManager, &QNetworkAccessManager::finished, this, &ChatWindow::handleNetworkReply);
+
+    setWindowTitle("Chat with " + username);
 }
 
-ChatWindow::~ChatWindow()
-{
+ChatWindow::~ChatWindow() {
     delete ui;
 }
 
-void ChatWindow::sendMessage()
-{
+void ChatWindow::sendMessage() {
     QString message = messageInput->text();
     if (!message.isEmpty()) {
         chatDisplay->append("Me: " + message);
@@ -49,6 +47,7 @@ void ChatWindow::sendMessage()
         // Create JSON object
         QJsonObject json;
         json["message"] = message;
+        json["username"] = username;
 
         // Convert JSON object to QByteArray
         QJsonDocument jsonDoc(json);
@@ -65,16 +64,16 @@ void ChatWindow::sendMessage()
     }
 }
 
-void ChatWindow::handleNetworkReply(QNetworkReply* reply)
-{
+void ChatWindow::handleNetworkReply(QNetworkReply* reply) {
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray responseData = reply->readAll();
         QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
         QJsonObject jsonObject = jsonResponse.object();
         QString chatGptMessage = jsonObject["response"].toString(); // 假设服务器返回的JSON中有response字段
         chatDisplay->append("<font color=\"red\">ChatGPT: " + chatGptMessage + "</font>");
+    } else {
+        chatDisplay->append("<font color=\"red\">Error: " + reply->errorString() + "</font>");
     }
-    else chatDisplay->append("<font color=\"red\">Error: " + reply->errorString() + "</font>");
 
     reply->deleteLater();
 }

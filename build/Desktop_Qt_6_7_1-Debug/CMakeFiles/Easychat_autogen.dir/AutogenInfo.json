@@ -410,6 +410,12 @@
 			"MU",
 			"EWIEGA46WW/moc_signupwindow.cpp",
 			null
+		],
+		[
+			"/home/kechang/Project/Easychat/userlist.h",
+			"MU",
+			"EWIEGA46WW/moc_userlist.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -475,7 +481,8 @@
 		[ "/home/kechang/Project/Easychat/chatwindow.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/login_window.cpp", "MU", null ],
 		[ "/home/kechang/Project/Easychat/main.cpp", "MU", null ],
-		[ "/home/kechang/Project/Easychat/signupwindow.cpp", "MU", null ]
+		[ "/home/kechang/Project/Easychat/signupwindow.cpp", "MU", null ],
+		[ "/home/kechang/Project/Easychat/userlist.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

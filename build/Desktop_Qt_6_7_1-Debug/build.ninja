@@ -89,6 +89,14 @@ build CMakeFiles/Easychat.dir/signupwindow.cpp.o: CXX_COMPILER__Easychat_unscann
   OBJECT_DIR = CMakeFiles/Easychat.dir
   OBJECT_FILE_DIR = CMakeFiles/Easychat.dir
 
+build CMakeFiles/Easychat.dir/userlist.cpp.o: CXX_COMPILER__Easychat_unscanned_Debug /home/kechang/Project/Easychat/userlist.cpp || cmake_object_order_depends_target_Easychat
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Easychat.dir/userlist.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/include -isystem /opt/Qt/6.7.1/gcc_64/include/QtCore -isystem /opt/Qt/6.7.1/gcc_64/include -isystem /opt/Qt/6.7.1/gcc_64/mkspecs/linux-g++ -isystem /opt/Qt/6.7.1/gcc_64/include/QtWidgets -isystem /opt/Qt/6.7.1/gcc_64/include/QtGui -isystem /opt/Qt/6.7.1/gcc_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles/Easychat.dir
+  OBJECT_FILE_DIR = CMakeFiles/Easychat.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Easychat
@@ -97,7 +105,7 @@ build CMakeFiles/Easychat.dir/signupwindow.cpp.o: CXX_COMPILER__Easychat_unscann
 #############################################
 # Link the executable Easychat
 
-build Easychat: CXX_EXECUTABLE_LINKER__Easychat_Debug CMakeFiles/Easychat.dir/Easychat_autogen/mocs_compilation.cpp.o CMakeFiles/Easychat.dir/main.cpp.o CMakeFiles/Easychat.dir/login_window.cpp.o CMakeFiles/Easychat.dir/chatwindow.cpp.o CMakeFiles/Easychat.dir/signupwindow.cpp.o | /opt/Qt/6.7.1/gcc_64/lib/libQt6Widgets.so.6.7.1 /opt/Qt/6.7.1/gcc_64/lib/libQt6Network.so.6.7.1 /opt/Qt/6.7.1/gcc_64/lib/libQt6Gui.so.6.7.1 /usr/lib/x86_64-linux-gnu/libGL.so /opt/Qt/6.7.1/gcc_64/lib/libQt6Core.so.6.7.1 || Easychat_autogen Easychat_autogen_timestamp_deps
+build Easychat: CXX_EXECUTABLE_LINKER__Easychat_Debug CMakeFiles/Easychat.dir/Easychat_autogen/mocs_compilation.cpp.o CMakeFiles/Easychat.dir/main.cpp.o CMakeFiles/Easychat.dir/login_window.cpp.o CMakeFiles/Easychat.dir/chatwindow.cpp.o CMakeFiles/Easychat.dir/signupwindow.cpp.o CMakeFiles/Easychat.dir/userlist.cpp.o | /opt/Qt/6.7.1/gcc_64/lib/libQt6Widgets.so.6.7.1 /opt/Qt/6.7.1/gcc_64/lib/libQt6Network.so.6.7.1 /opt/Qt/6.7.1/gcc_64/lib/libQt6Gui.so.6.7.1 /usr/lib/x86_64-linux-gnu/libGL.so /opt/Qt/6.7.1/gcc_64/lib/libQt6Core.so.6.7.1 || Easychat_autogen Easychat_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/opt/Qt/6.7.1/gcc_64/lib:  /opt/Qt/6.7.1/gcc_64/lib/libQt6Widgets.so.6.7.1  /opt/Qt/6.7.1/gcc_64/lib/libQt6Network.so.6.7.1  /opt/Qt/6.7.1/gcc_64/lib/libQt6Gui.so.6.7.1  /usr/lib/x86_64-linux-gnu/libGL.so  /opt/Qt/6.7.1/gcc_64/lib/libQt6Core.so.6.7.1
   OBJECT_DIR = CMakeFiles/Easychat.dir
@@ -182,7 +190,7 @@ build Easychat_autogen_timestamp_deps: phony
 #############################################
 # Utility command for Easychat_autogen
 
-build Easychat_autogen: phony CMakeFiles/Easychat_autogen Easychat_autogen/include/ui_login_window.h Easychat_autogen/include/ui_chatwindow.h Easychat_autogen/include/ui_signupwindow.h Easychat_autogen/timestamp Easychat_autogen/mocs_compilation.cpp Easychat_autogen_timestamp_deps
+build Easychat_autogen: phony CMakeFiles/Easychat_autogen Easychat_autogen/include/ui_login_window.h Easychat_autogen/include/ui_chatwindow.h Easychat_autogen/include/ui_signupwindow.h Easychat_autogen/include/ui_userlist.h Easychat_autogen/timestamp Easychat_autogen/mocs_compilation.cpp Easychat_autogen_timestamp_deps
 
 
 #############################################
@@ -199,7 +207,7 @@ build Easychat_autogen/timestamp Easychat_autogen/mocs_compilation.cpp | ${cmake
 #############################################
 # Phony custom command for CMakeFiles/Easychat_autogen
 
-build CMakeFiles/Easychat_autogen Easychat_autogen/include/ui_login_window.h Easychat_autogen/include/ui_chatwindow.h Easychat_autogen/include/ui_signupwindow.h | ${cmake_ninja_workdir}CMakeFiles/Easychat_autogen ${cmake_ninja_workdir}Easychat_autogen/include/ui_login_window.h ${cmake_ninja_workdir}Easychat_autogen/include/ui_chatwindow.h ${cmake_ninja_workdir}Easychat_autogen/include/ui_signupwindow.h: phony Easychat_autogen/timestamp || Easychat_autogen_timestamp_deps
+build CMakeFiles/Easychat_autogen Easychat_autogen/include/ui_login_window.h Easychat_autogen/include/ui_chatwindow.h Easychat_autogen/include/ui_signupwindow.h Easychat_autogen/include/ui_userlist.h | ${cmake_ninja_workdir}CMakeFiles/Easychat_autogen ${cmake_ninja_workdir}Easychat_autogen/include/ui_login_window.h ${cmake_ninja_workdir}Easychat_autogen/include/ui_chatwindow.h ${cmake_ninja_workdir}Easychat_autogen/include/ui_signupwindow.h ${cmake_ninja_workdir}Easychat_autogen/include/ui_userlist.h: phony Easychat_autogen/timestamp || Easychat_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

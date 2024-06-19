@@ -18,7 +18,7 @@ class ChatWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    ChatWindow(QWidget *parent = nullptr);
+    ChatWindow(const QString &username, QWidget *parent = nullptr);
     ~ChatWindow();
 
 private slots:
@@ -32,6 +32,7 @@ private:
     QPushButton *sendButton;
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "http://your-server-url.com";
+    QString username;  // Declaration of username
 };
 
 #endif // CHATWINDOW_H
