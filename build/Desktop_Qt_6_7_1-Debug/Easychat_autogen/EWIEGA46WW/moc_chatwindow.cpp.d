@@ -1,14 +1,17 @@
 /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/EWIEGA46WW/moc_chatwindow.cpp: /home/kechang/Project/Easychat/chatwindow.h \
   /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QDateTime \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QIODevice \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QList \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QMetaType \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QObject \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QPair \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QSharedDataPointer \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QString \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QUrl \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QVariant \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QVector \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/q20functional.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/q20memory.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/q20type_traits.h \
@@ -129,6 +132,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qutf8stringview.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qvariant.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qvarlengtharray.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qvector.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qversiontagging.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qxptype_traits.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qyieldcpu.h \

@@ -9,7 +9,7 @@ UserList::UserList(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::UserList),
     networkManager(new QNetworkAccessManager(this)) {
-
+    setFixedSize(651, 429);
     ui->setupUi(this);
 
     connect(ui->accountListWidget, &QListWidget::itemClicked, this, &UserList::onAccountClicked);

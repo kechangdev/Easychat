@@ -3,10 +3,11 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QNetworkRequest>
+#include <QJsonArray>
 
 ChatWindow::ChatWindow(const QString &username, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::ChatWindow), networkManager(new QNetworkAccessManager(this)), username(username) {
-
+    setFixedSize(651, 429);
     ui->setupUi(this);
 
     // Initialize widgets
@@ -42,8 +43,6 @@ ChatWindow::~ChatWindow() {
 void ChatWindow::sendMessage() {
     QString message = messageInput->text();
     if (!message.isEmpty()) {
-        chatDisplay->append("Me: " + message);
-
         // Create JSON object
         QJsonObject json;
         json["message"] = message;
@@ -69,11 +68,30 @@ void ChatWindow::handleNetworkReply(QNetworkReply* reply) {
         QByteArray responseData = reply->readAll();
         QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
         QJsonObject jsonObject = jsonResponse.object();
-        QString chatGptMessage = jsonObject["response"].toString(); // 假设服务器返回的JSON中有response字段
-        chatDisplay->append("<font color=\"red\">ChatGPT: " + chatGptMessage + "</font>");
+
+        QString message = jsonObject["message"].toString();
+        QString timeStr = jsonObject["timestamp"].toString(); // 假设服务器返回的JSON中有timestamp字段
+        QDateTime timestamp = QDateTime::fromString(timeStr, Qt::ISODate);
+
+        messages.append(qMakePair(timestamp, message));
+
+        // Sort messages by timestamp
+        std::sort(messages.begin(), messages.end(), [](const QPair<QDateTime, QString> &a, const QPair<QDateTime, QString> &b) {
+            return a.first < b.first;
+        });
+
+        displayMessages();
     } else {
         chatDisplay->append("<font color=\"red\">Error: " + reply->errorString() + "</font>");
     }
 
     reply->deleteLater();
+}
+
+void ChatWindow::displayMessages() {
+    chatDisplay->clear();
+    for (const auto &message : messages) {
+        QString timeStr = message.first.toString("yyyy-MM-dd HH:mm:ss");
+        chatDisplay->append("[" + timeStr + "] " + message.second);
+    }
 }

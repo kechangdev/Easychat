@@ -8,6 +8,9 @@
 #include <QVBoxLayout>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QVector>
+#include <QPair>
+#include <QDateTime>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ChatWindow; }
@@ -26,13 +29,16 @@ private slots:
     void handleNetworkReply(QNetworkReply* reply);
 
 private:
+    void displayMessages();
+
     Ui::ChatWindow *ui;
     QTextEdit *chatDisplay;
     QLineEdit *messageInput;
     QPushButton *sendButton;
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "http://your-server-url.com";
-    QString username;  // Declaration of username
+    QString username;
+    QVector<QPair<QDateTime, QString>> messages; // Stores messages with their timestamps
 };
 
 #endif // CHATWINDOW_H
