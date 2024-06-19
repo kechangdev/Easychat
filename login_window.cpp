@@ -54,23 +54,24 @@ void login_window::onLoginButtonClicked() {
     dbg("Trying to connect to Server...");
     QString username = ui->loginwindow_username_input->text();
     QString password = ui->loginwindow_userpassword_input->text();
+    QString method = "login";
 
     if (username.isEmpty() || password.isEmpty()) {
         dbg("Username or Password is empty.");
-        Notification *notification = new Notification;
         notification->display("Username or Password is empty.");
-        notification->show();
         return;
     }
 
-    QUrl url(serverUrl + "/login");
+    dbg("Constracting requestion:");
+    dbg("Target host: " + serverUrl);
+    QUrl url(serverUrl);
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
     QJsonObject json;
     json["username"] = username;
     json["password"] = password;
-
+    json["method"] = method;
     QJsonDocument jsonDoc(json);
     QByteArray jsonData = jsonDoc.toJson();
 
@@ -84,19 +85,28 @@ void login_window::onReplyFinished(QNetworkReply *reply) {
     }
 
     QByteArray responseData = reply->readAll();
-    if (login_Response_Check(responseData)) dbg("Login successful!");
-    else dbg("Login failed.");
+    if (login_Response_Check(responseData)) {
+        dbg("Login successful!");
+        dbg("Hide Login Window...");
+        this->hide();
+        dbg("Display Userlist window");
+        userlist->show();
+    }
+    else {
+        notification->display("Login failed.");
+        dbg("Login failed.");
+    }
 
     reply->deleteLater();
 }
 
 bool login_window::login_Response_Check(QByteArray& responseData) {
+    // return 1;
     QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
     if (jsonResponse.isObject()) {
         QJsonObject jsonObject = jsonResponse.object();
-        if (jsonObject.contains("success") && jsonObject["success"].toBool()) {
-            return true;
-        }
+        dbg("Check the Status from response...");
+        return jsonObject.contains("Status") && jsonObject["Status"].toString() == "Login Success";
     }
-    return false;
+    return 0;
 }

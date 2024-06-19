@@ -29,6 +29,7 @@ private:
     void fetchAccounts();
     Ui::UserList *ui;
     QNetworkAccessManager *networkManager;
+    Notification *notification = new Notification;
 };
 
 #endif // USERLIST_H

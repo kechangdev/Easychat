@@ -43,6 +43,7 @@ private:
     const QString serverUrl = "http://your-server-url.com";
     QString username;
     QVector<QPair<QDateTime, QString>> messages; // Stores messages with their timestamps
+    Notification *notification = new Notification;
 };
 
 #endif // CHATWINDOW_H

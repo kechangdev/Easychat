@@ -29,6 +29,7 @@ private:
     Ui::SignupWindow *ui;
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "http://your-server-url.com";
+    Notification *notification = new Notification;
 };
 
 #endif // SIGNUPWINDOW_H

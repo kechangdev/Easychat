@@ -6,6 +6,7 @@
 #include <QNetworkAccessManager>
 #include "signupwindow.h"
 #include "notification.h"
+#include "userlist.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,5 +35,7 @@ private:
     SignupWindow *signupwindow;
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "http://your-server-url.com";
+    Notification *notification = new Notification;
+    UserList *userlist = new UserList;
 };
 #endif // LOGIN_WINDOW_H
