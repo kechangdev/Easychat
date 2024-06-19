@@ -165,8 +165,8 @@ This repository contains a Go-based server implementation for a user management 
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/your-username/go-user-messaging-server.git
-   cd go-user-messaging-server
+   https://github.com/kechangdev/Easychat.git
+cd Easychat/Server
    ```
 
 2. **Install dependencies**:
