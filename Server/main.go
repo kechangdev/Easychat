@@ -148,18 +148,6 @@ func handleChat(w http.ResponseWriter, req map[string]string) {
     json.NewEncoder(w).Encode(map[string]bool{"success": true})
 }
 
-// func handleChatHistory(w http.ResponseWriter, req map[string]string) {
-//     log.Println("Handling chat history request")
-//     var messages []Message
-//     if err := db.Where("username_a = ? AND username_b = ?", req["usernameA"], req["usernameB"]).Find(&messages).Error; err != nil {
-//         log.Printf("Failed to retrieve chat history between %s and %s: %v", req["usernameA"], req["usernameB"], err)
-//         http.Error(w, err.Error(), http.StatusInternalServerError)
-//         return
-//     }
-//     log.Printf("Retrieved chat history between %s and %s: %v", req["usernameA"], req["usernameB"], messages)
-//     json.NewEncoder(w).Encode(messages)
-// }
-
 func handleChatHistory(w http.ResponseWriter, req map[string]string) {
     log.Println("Handling chat history request")
     var messages []Message
@@ -170,14 +158,17 @@ func handleChatHistory(w http.ResponseWriter, req map[string]string) {
 
     // 执行查询
     if err := query.Find(&messages).Error; err != nil {
-        log.Printf("Failed to retrieve chat history between %s and %s: %v", req["usernameA"], req["usernameB"], err)
+        log.Printf("Failed to retrieve chat history between %s and %s or between %s and %s: %v", 
+            req["usernameA"], req["usernameB"], req["usernameB"], req["usernameA"], err)
         http.Error(w, err.Error(), http.StatusInternalServerError)
         return
     }
 
-    log.Printf("Retrieved chat history between %s and %s: %v", req["usernameA"], req["usernameB"], messages)
+    log.Printf("Retrieved chat history between %s and %s or between %s and %s: %v", 
+        req["usernameA"], req["usernameB"], req["usernameB"], req["usernameA"], messages)
     json.NewEncoder(w).Encode(messages)
 }
+
 
 func handleClearHistory(w http.ResponseWriter, req map[string]string) {
     log.Println("Handling clear chat history request")
