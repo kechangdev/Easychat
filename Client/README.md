@@ -99,8 +99,8 @@ The server responds with a JSON message indicating whether the chat history was 
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/your-username/easychat-client.git
-   cd easychat-client
+   https://github.com/kechangdev/Easychat.git
+   cd Easychat/Client
    ```
 
 2. **Ensure you have Qt installed**. You can download and install Qt from [Qt's official website](https://www.qt.io/download).
