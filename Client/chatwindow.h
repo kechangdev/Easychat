@@ -13,8 +13,9 @@
 #include <QPair>
 #include <QDateTime>
 #include <QDebug>
-#include <QTimer>
-#include <QToolButton>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ChatWindow; }
@@ -32,15 +33,14 @@ public:
     }
     ~ChatWindow();
 
-private slots:
+public slots:
     void sendMessage();
     void handleNetworkReply(QNetworkReply* reply);
     void getChatHistory();
     void handleHistoryReply(QNetworkReply* reply);
-    void startPolling();
-    void stopPolling();
     void clearChatHistory();
     void handleClearHistoryReply(QNetworkReply* reply);
+    void refreshChatHistory();
 
 private:
     void displayMessages();
@@ -50,12 +50,12 @@ private:
     QLineEdit *messageInput;
     QPushButton *sendButton;
     QToolButton *clearButton;
+    QPushButton *refreshButton; // Added for manual refresh
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "http://49.234.177.172:10086/api";
     QString username;
     QVector<QPair<QDateTime, QString>> messages;
     Notification *notification;
-    QTimer *pollingTimer;
 };
 
 #endif // CHATWINDOW_H

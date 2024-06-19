@@ -5,13 +5,15 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QDebug \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QIODevice \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QJsonArray \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QJsonDocument \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QJsonObject \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QList \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QMetaType \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QObject \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QPair \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QSharedDataPointer \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QString \
-  /opt/Qt/6.7.1/gcc_64/include/QtCore/QTimer \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QUrl \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QVariant \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QVector \
@@ -28,13 +30,14 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qatomic.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qatomic_cxx11.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbasicatomic.h \
-  /opt/Qt/6.7.1/gcc_64/include/QtCore/qbasictimer.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbindingstorage.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearray.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearraylist.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearrayview.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcalendar.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qcborcommon.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qcborvalue.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qchar.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcompare.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qcompare_impl.h \
@@ -67,6 +70,10 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qiodevicebase.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qiterable.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qiterator.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qjsonarray.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qjsondocument.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qjsonobject.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qjsonvalue.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qlatin1stringview.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qline.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qlist.h \
@@ -91,6 +98,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qprocessordetection.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qrect.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qrefcount.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qregularexpression.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qscopedpointer.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qscopeguard.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qset.h \
@@ -122,7 +130,6 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtdeprecationmarkers.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtenvironmentvariables.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtextstream.h \
-  /opt/Qt/6.7.1/gcc_64/include/QtCore/qtimer.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtmetamacros.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtnoop.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtpreprocessorsupport.h \
@@ -135,6 +142,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtypes.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qurl.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qutf8stringview.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/quuid.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qvariant.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qvarlengtharray.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qvector.h \
@@ -194,7 +202,6 @@
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QPushButton \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QTextEdit \
-  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QToolButton \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QVBoxLayout \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QWidget \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractbutton.h \
@@ -210,7 +217,6 @@
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtabwidget.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtextedit.h \
-  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtoolbutton.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \

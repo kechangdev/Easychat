@@ -1,12 +1,8 @@
 #include "chatwindow.h"
 #include "ui_chatwindow.h"
-#include <QJsonObject>
-#include <QJsonDocument>
-#include <QNetworkRequest>
-#include <QJsonArray>
 
 ChatWindow::ChatWindow(const QString &username, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::ChatWindow), networkManager(new QNetworkAccessManager(this)), username(username), notification(new Notification), pollingTimer(new QTimer(this))
+    : QMainWindow(parent), ui(new Ui::ChatWindow), networkManager(new QNetworkAccessManager(this)), username(username), notification(new Notification)
 {
     dbg("Initializing chat window");
     setFixedSize(651, 429);
@@ -20,12 +16,14 @@ ChatWindow::ChatWindow(const QString &username, QWidget *parent)
     clearButton->setText("Clear History");
     clearButton->setIcon(QIcon(":/icons/clear.png"));
     clearButton->setAutoRaise(true);
+    refreshButton = new QPushButton("Refresh", this); // Initialize refresh button
 
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(chatDisplay);
     layout->addWidget(messageInput);
     layout->addWidget(sendButton);
     layout->addWidget(clearButton);
+    layout->addWidget(refreshButton); // Add refresh button to layout
 
     QWidget *centralWidget = new QWidget(this);
     centralWidget->setLayout(layout);
@@ -34,24 +32,19 @@ ChatWindow::ChatWindow(const QString &username, QWidget *parent)
     dbg("Connecting signals and slots");
     connect(sendButton, &QPushButton::clicked, this, &ChatWindow::sendMessage);
     connect(messageInput, &QLineEdit::returnPressed, this, &ChatWindow::sendMessage);
-    connect(networkManager, &QNetworkAccessManager::finished, this, &ChatWindow::handleNetworkReply);
     connect(clearButton, &QToolButton::clicked, this, &ChatWindow::clearChatHistory);
-    connect(pollingTimer, &QTimer::timeout, this, &ChatWindow::getChatHistory);
+    connect(refreshButton, &QPushButton::clicked, this, &ChatWindow::refreshChatHistory); // Connect refresh button
 
     dbg("Setting window title");
     setWindowTitle("Chat with " + username);
 
     dbg("Fetch chat history when the window is initialized");
     getChatHistory();
-
-    dbg("Start polling for chat history every 5 seconds");
-    startPolling();
 }
 
 ChatWindow::~ChatWindow() {
     delete ui;
     delete notification;
-    stopPolling();
 }
 
 void ChatWindow::sendMessage() {
@@ -65,16 +58,18 @@ void ChatWindow::sendMessage() {
         json["usernameB"] = username;
         json["method"] = "chat";
 
-        dbg("Converting JSON object to QByteArray");
         QJsonDocument jsonDoc(json);
         QByteArray jsonData = jsonDoc.toJson();
         dbg("JSON:" + jsonData);
-        dbg("Creating network request");
+
         QNetworkRequest request{QUrl(serverUrl)};
         request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
         dbg("Sending POST request");
-        networkManager->post(request, jsonData);
+        QNetworkReply* reply = networkManager->post(request, jsonData);
+        connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            handleNetworkReply(reply);
+        });
 
         messageInput->clear();
     } else {
@@ -88,6 +83,7 @@ void ChatWindow::handleNetworkReply(QNetworkReply* reply) {
         QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
         QJsonObject jsonObject = jsonResponse.object();
 
+        dbg("Response: " + jsonResponse.toJson());
         bool success = jsonObject["success"].toBool();
         if (success) {
             dbg("Message sent successfully.");
@@ -120,23 +116,62 @@ void ChatWindow::getChatHistory() {
 
     dbg("Sending POST request for chat history");
     QNetworkReply* reply = networkManager->post(request, jsonData);
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() { handleHistoryReply(reply); });
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        handleHistoryReply(reply);
+    });
 }
 
 void ChatWindow::handleHistoryReply(QNetworkReply* reply) {
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray responseData = reply->readAll();
-        QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
+
+        dbg("Raw response data: " + QString(responseData));
+
+        if (responseData.isEmpty()) {
+            dbg("Response data is empty.");
+            chatDisplay->append("<font color=\"red\">Error: Empty response from server</font>");
+            reply->deleteLater();
+            return;
+        }
+
+        QJsonParseError jsonError;
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData, &jsonError);
+
+        if (jsonError.error != QJsonParseError::NoError) {
+            dbg("JSON parse error: " + jsonError.errorString());
+            chatDisplay->append("<font color=\"red\">Error: Failed to parse JSON response</font>");
+            reply->deleteLater();
+            return;
+        }
+
         QJsonArray jsonArray = jsonResponse.array();
+        dbg("JSON Array size: " + QString::number(jsonArray.size()));
 
         messages.clear();
         for (const QJsonValue &value : jsonArray) {
             QJsonObject obj = value.toObject();
+
+            if (!obj.contains("message")) {
+                dbg("JSON object missing 'message' field: " + QString(QJsonDocument(obj).toJson(QJsonDocument::Compact)));
+                continue;
+            }
+
             QString message = obj["message"].toString();
             QString timeStr = obj["timestamp"].toString();
             QDateTime timestamp = QDateTime::fromString(timeStr, Qt::ISODate);
+
+            if (!timestamp.isValid()) {
+                dbg("Invalid timestamp format: " + timeStr);
+                continue;
+            }
+
+            dbg("Parsed message: " + message);
+            dbg("Parsed timestamp: " + timestamp.toString());
+
             messages.append(qMakePair(timestamp, message));
         }
+
+        dbg("Total messages parsed: " + QString::number(messages.size()));
 
         dbg("Sorting messages by timestamp");
         std::sort(messages.begin(), messages.end(), [](const QPair<QDateTime, QString> &a, const QPair<QDateTime, QString> &b) {
@@ -145,6 +180,7 @@ void ChatWindow::handleHistoryReply(QNetworkReply* reply) {
 
         dbg("Displaying messages");
         displayMessages();
+        update(); // Ensure the widget updates immediately
     } else {
         chatDisplay->append("<font color=\"red\">Error: " + reply->errorString() + "</font>");
         dbg("Network error: " + reply->errorString());
@@ -171,7 +207,9 @@ void ChatWindow::clearChatHistory() {
 
     dbg("Sending POST request to clear chat history");
     QNetworkReply* reply = networkManager->post(request, jsonData);
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() { handleClearHistoryReply(reply); });
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        handleClearHistoryReply(reply);
+    });
 }
 
 void ChatWindow::handleClearHistoryReply(QNetworkReply* reply) {
@@ -205,12 +243,8 @@ void ChatWindow::displayMessages() {
     }
 }
 
-void ChatWindow::startPolling() {
-    dbg("Starting polling...");
-    pollingTimer->start(5000); // Poll every 5 seconds
+void ChatWindow::refreshChatHistory() {
+    dbg("Manually refreshing chat history");
+    getChatHistory();
 }
 
-void ChatWindow::stopPolling() {
-    dbg("Stopping polling...");
-    pollingTimer->stop();
-}
