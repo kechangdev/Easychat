@@ -9,13 +9,10 @@
 #include <QDebug>
 #include <QDateTime>
 
-SignupWindow::SignupWindow(QWidget *parent)
-    : QDialog(parent),
-    ui(new Ui::SignupWindow),
-    networkManager(new QNetworkAccessManager(this)) {
-
+SignupWindow::SignupWindow(QWidget *parent) : QDialog(parent), ui(new Ui::SignupWindow), networkManager(new QNetworkAccessManager(this)) {
+    dbg("init signup window");
     ui->setupUi(this);
-
+    dbg("Connect Signal & Slots");
     connect(ui->Signup_buttonBox_Cancel_or_Ok, &QDialogButtonBox::accepted, this, &SignupWindow::onAccepted);
 }
 
@@ -30,11 +27,18 @@ void SignupWindow::onAccepted() {
     QString password = ui->Signup_Password_input->text();
     QString confirm_password = ui->Signup_Confirm_Password_input->text();
 
+    dbg("Clear user input");
+    ui->Signup_Confirm_Password_input->clear();
+    ui->Signup_Password_input->clear();
+    ui->Signup_Username_input->clear();
+
     if (password != confirm_password) {
         dbg("Password != confirm_password!");
+        notification->display("Password != confirm_password!");
         return;
     }
 
+    dbg("Preparing request...");
     dbg("Username:" + username);
     dbg("Password:" + password);
     dbg("Method: Signup");
@@ -62,11 +66,8 @@ void SignupWindow::onAccepted() {
     connect(reply, &QNetworkReply::finished, [=]() {
         dbg("Response received.");
         QByteArray responseData = reply->readAll();
-        if (signup_Response_Check(responseData)) {
-            dbg("Signup successful.");
-        } else {
-            dbg("Signup failed.");
-        }
+        if (signup_Response_Check(responseData)) dbg("Signup successful.");
+        else dbg("Signup failed.");
         reply->deleteLater();
     });
 

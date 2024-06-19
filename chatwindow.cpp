@@ -1,25 +1,20 @@
 #include "chatwindow.h"
 #include "ui_chatwindow.h"
-#include "notification.h"
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QNetworkRequest>
 #include <QJsonArray>
 
-ChatWindow::ChatWindow(const QString &username, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::ChatWindow), networkManager(new QNetworkAccessManager(this)), username(username) {
+ChatWindow::ChatWindow(const QString &username, QWidget *parent) : QMainWindow(parent), ui(new Ui::ChatWindow), networkManager(new QNetworkAccessManager(this)), username(username) {
+    dbg("init chat window");
     setFixedSize(651, 429);
     ui->setupUi(this);
 
-    // Initialize widgets
     chatDisplay = new QTextEdit(this);
     chatDisplay->setReadOnly(true);
-
     messageInput = new QLineEdit(this);
-
     sendButton = new QPushButton("Send", this);
 
-    // Layout setup
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(chatDisplay);
     layout->addWidget(messageInput);
@@ -29,11 +24,11 @@ ChatWindow::ChatWindow(const QString &username, QWidget *parent)
     centralWidget->setLayout(layout);
     setCentralWidget(centralWidget);
 
-    // Connect signals and slots
+    dbg("Connect signals and slots");
     connect(sendButton, &QPushButton::clicked, this, &ChatWindow::sendMessage);
     connect(messageInput, &QLineEdit::returnPressed, this, &ChatWindow::sendMessage);
     connect(networkManager, &QNetworkAccessManager::finished, this, &ChatWindow::handleNetworkReply);
-
+    dbg("Set window title");
     setWindowTitle("Chat with " + username);
 }
 
@@ -42,22 +37,24 @@ ChatWindow::~ChatWindow() {
 }
 
 void ChatWindow::sendMessage() {
+    dbg("Sending message...");
     QString message = messageInput->text();
     if (!message.isEmpty()) {
-        // Create JSON object
+        dbg("Creating JSON object...");
         QJsonObject json;
         json["message"] = message;
         json["username"] = username;
+        json["method"] = "chat";
 
-        // Convert JSON object to QByteArray
+        dbg("Convert JSON object to QByteArray");
         QJsonDocument jsonDoc(json);
         QByteArray jsonData = jsonDoc.toJson();
 
-        // Create network request
+        dbg("Create network request");
         QNetworkRequest request((QUrl(serverUrl)));
         request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
-        // Send POST request
+        dbg("Send POST request");
         networkManager->post(request, jsonData);
 
         messageInput->clear();
@@ -76,15 +73,15 @@ void ChatWindow::handleNetworkReply(QNetworkReply* reply) {
 
         messages.append(qMakePair(timestamp, message));
 
-        // Sort messages by timestamp
+        dbg("Sort messages by timestamp");
         std::sort(messages.begin(), messages.end(), [](const QPair<QDateTime, QString> &a, const QPair<QDateTime, QString> &b) {
             return a.first < b.first;
         });
 
+        dbg("Display Message");
         displayMessages();
-    } else {
-        chatDisplay->append("<font color=\"red\">Error: " + reply->errorString() + "</font>");
     }
+    else chatDisplay->append("<font color=\"red\">Error: " + reply->errorString() + "</font>");
 
     reply->deleteLater();
 }

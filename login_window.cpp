@@ -59,6 +59,8 @@ void login_window::onLoginButtonClicked() {
     if (username.isEmpty() || password.isEmpty()) {
         dbg("Username or Password is empty.");
         notification->display("Username or Password is empty.");
+        ui->loginwindow_username_input->clear();
+        ui->loginwindow_userpassword_input->clear();
         return;
     }
 
@@ -81,6 +83,9 @@ void login_window::onLoginButtonClicked() {
 void login_window::onReplyFinished(QNetworkReply *reply) {
     if (reply->error() != QNetworkReply::NoError) {
         dbg("Error in network reply: " + reply->errorString());
+        notification->display("Error in network reply: " + reply->errorString());
+        ui->loginwindow_username_input->clear();
+        ui->loginwindow_userpassword_input->clear();
         return;
     }
 
@@ -96,18 +101,19 @@ void login_window::onReplyFinished(QNetworkReply *reply) {
         notification->display("Login failed.");
         dbg("Login failed.");
     }
-
+    ui->loginwindow_username_input->clear();
+    ui->loginwindow_userpassword_input->clear();
     reply->deleteLater();
 }
 
 bool login_window::login_Response_Check(QByteArray& responseData) {
-    return 1;
+    // return 1;
 
     QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
     if (jsonResponse.isObject()) {
         QJsonObject jsonObject = jsonResponse.object();
         dbg("Check the Status from response...");
-        return jsonObject.contains("Status") && jsonObject["Status"].toString() == "Login Success";
+        return jsonObject.contains("Status") && jsonObject["Status"].toString() == "Login Successful";
     }
     return 0;
 }
