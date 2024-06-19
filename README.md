@@ -2,6 +2,9 @@
 
 Easychat is a simple chat application that consists of two main components: the Client and the Server. This project aims to provide a straightforward and efficient chat experience.
 
+
+~~In fact, this project is merely to fulfill a course requirement.~~
+
 ## Features
 
 - Real-time messaging
