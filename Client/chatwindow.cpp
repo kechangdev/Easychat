@@ -151,12 +151,13 @@ void ChatWindow::handleHistoryReply(QNetworkReply* reply) {
         for (const QJsonValue &value : jsonArray) {
             QJsonObject obj = value.toObject();
 
-            if (!obj.contains("message")) {
-                dbg("JSON object missing 'message' field: " + QString(QJsonDocument(obj).toJson(QJsonDocument::Compact)));
+            if (!obj.contains("message") || !obj.contains("usernameA")) {
+                dbg("JSON object missing 'message' or 'usernameA' field: " + QString(QJsonDocument(obj).toJson(QJsonDocument::Compact)));
                 continue;
             }
 
             QString message = obj["message"].toString();
+            QString sender = obj["usernameA"].toString();
             QString timeStr = obj["timestamp"].toString();
             QDateTime timestamp = QDateTime::fromString(timeStr, Qt::ISODate);
 
@@ -166,9 +167,10 @@ void ChatWindow::handleHistoryReply(QNetworkReply* reply) {
             }
 
             dbg("Parsed message: " + message);
+            dbg("Parsed sender: " + sender);
             dbg("Parsed timestamp: " + timestamp.toString());
 
-            messages.append(qMakePair(timestamp, message));
+            messages.append(qMakePair(timestamp, QString("[%1] %2: %3").arg(timestamp.toString("yyyy-MM-dd HH:mm:ss"), sender, message)));
         }
 
         dbg("Total messages parsed: " + QString::number(messages.size()));
@@ -238,8 +240,7 @@ void ChatWindow::handleClearHistoryReply(QNetworkReply* reply) {
 void ChatWindow::displayMessages() {
     chatDisplay->clear();
     for (const auto &message : messages) {
-        QString timeStr = message.first.toString("yyyy-MM-dd HH:mm:ss");
-        chatDisplay->append("[" + timeStr + "] " + message.second);
+        chatDisplay->append(message.second);
     }
 }
 
@@ -247,4 +248,3 @@ void ChatWindow::refreshChatHistory() {
     dbg("Manually refreshing chat history");
     getChatHistory();
 }
-
