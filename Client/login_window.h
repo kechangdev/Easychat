@@ -34,7 +34,7 @@ private:
     Ui::login_window *ui;
     SignupWindow *signupwindow;
     QNetworkAccessManager *networkManager;
-    const QString serverUrl = "https://chat.6b.fit";
+    const QString serverUrl = "http://49.234.177.172:10086/api";
     Notification *notification;
     UserList *userlist;
 

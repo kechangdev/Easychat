@@ -68,7 +68,7 @@ void ChatWindow::sendMessage() {
         dbg("Converting JSON object to QByteArray");
         QJsonDocument jsonDoc(json);
         QByteArray jsonData = jsonDoc.toJson();
-
+        dbg("JSON:" + jsonData);
         dbg("Creating network request");
         QNetworkRequest request{QUrl(serverUrl)};
         request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
@@ -163,6 +163,8 @@ void ChatWindow::clearChatHistory() {
 
     QJsonDocument jsonDoc(json);
     QByteArray jsonData = jsonDoc.toJson();
+
+    dbg("JSON:" + jsonData);
 
     QNetworkRequest request{QUrl(serverUrl)};
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");

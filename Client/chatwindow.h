@@ -51,7 +51,7 @@ private:
     QPushButton *sendButton;
     QToolButton *clearButton;
     QNetworkAccessManager *networkManager;
-    const QString serverUrl = "https://chat.6b.fit";
+    const QString serverUrl = "http://49.234.177.172:10086/api";
     QString username;
     QVector<QPair<QDateTime, QString>> messages;
     Notification *notification;

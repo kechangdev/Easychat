@@ -39,6 +39,7 @@ void UserList::fetchAccounts() {
     QByteArray jsonData = jsonDoc.toJson();
 
     dbg("Sending request to server...");
+    dbg("Request Data:" + jsonData);
     networkManager->post(request, jsonData);
 }
 
@@ -46,6 +47,7 @@ void UserList::onAccountsFetched(QNetworkReply *reply) {
     dbg("Received response from server");
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray responseData = reply->readAll();
+        dbg("Response Data:" + responseData);
         QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
         if (!jsonDoc.isArray()) {
             dbg("Response is not a JSON array");
@@ -58,11 +60,14 @@ void UserList::onAccountsFetched(QNetworkReply *reply) {
         ui->accountListWidget->clear();
         for (const QJsonValue &value : jsonArray) {
             QJsonObject obj = value.toObject();
-            ui->accountListWidget->addItem(obj["username"].toString());
+            dbg("User:" + obj["username"].toString());
+            if(obj["username"].toString() != usernameA)
+                ui->accountListWidget->addItem(obj["username"].toString());
         }
         dbg("User list populated");
+    } else {
+        dbg("Network error: " + reply->errorString());
     }
-    else dbg("Network error: " + reply->errorString());
     reply->deleteLater();
 }
 

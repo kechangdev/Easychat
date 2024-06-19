@@ -58,6 +58,7 @@ void SignupWindow::onAccepted() {
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         dbg("Response received");
         QByteArray responseData = reply->readAll();
+        dbg(responseData);
         if (signup_Response_Check(responseData)) {
             dbg("Signup successful");
             notification->display("Signup successful");

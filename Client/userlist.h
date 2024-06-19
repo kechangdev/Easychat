@@ -31,7 +31,7 @@ protected:
 private:
     Ui::UserList *ui;
     QNetworkAccessManager *networkManager;
-    const QString serverUrl = "https://chat.6b.fit";
+    const QString serverUrl = "http://49.234.177.172:10086/api";
     QString usernameA;
     static void dbg(const QString &str) {
         qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
