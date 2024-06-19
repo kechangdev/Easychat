@@ -1,24 +1,21 @@
 #include "login_window.h"
 #include "./ui_login_window.h"
-#include "notification.h"
-#include "signupwindow.h"
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QUrl>
 #include <QDebug>
 #include <QDateTime>
 
-login_window::login_window(QWidget *parent) : QMainWindow(parent), ui(new Ui::login_window), networkManager(new QNetworkAccessManager(this)) {
+login_window::login_window(QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::login_window), signupwindow(new SignupWindow(this)),
+    networkManager(new QNetworkAccessManager(this)), notification(new Notification),
+    userlist(new UserList) {
     dbg("Programming...");
 
     dbg("init Login Window:");
-
-    dbg("init Login Window Size");
     setFixedSize(651, 429);
-    dbg("init Login Window UI");
     ui->setupUi(this);
 
     dbg("init Signup hyperlink");
@@ -28,20 +25,16 @@ login_window::login_window(QWidget *parent) : QMainWindow(parent), ui(new Ui::lo
     ui->signup_label->setOpenExternalLinks(false);
 
     dbg("init signal & slots:");
-    dbg("init login button");
     connect(ui->loginwindow_login_button, &QPushButton::clicked, this, &login_window::onLoginButtonClicked);
-    dbg("init network manager");
     connect(networkManager, &QNetworkAccessManager::finished, this, &login_window::onReplyFinished);
-    dbg("init signup label");
     connect(ui->signup_label, &QLabel::linkActivated, this, &login_window::onSignupLinkClicked);
-
-    dbg("init signup window");
-    signupwindow = new SignupWindow(this);
 }
 
 login_window::~login_window() {
     delete signupwindow;
     delete ui;
+    delete notification;
+    delete userlist;
 }
 
 void login_window::onSignupLinkClicked() {
@@ -56,6 +49,8 @@ void login_window::onLoginButtonClicked() {
     QString password = ui->loginwindow_userpassword_input->text();
     QString method = "login";
 
+    usernameA = username;
+
     if (username.isEmpty() || password.isEmpty()) {
         dbg("Username or Password is empty.");
         notification->display("Username or Password is empty.");
@@ -64,7 +59,7 @@ void login_window::onLoginButtonClicked() {
         return;
     }
 
-    dbg("Constracting requestion:");
+    dbg("Constructing request:");
     dbg("Target host: " + serverUrl);
     QUrl url(serverUrl);
     QNetworkRequest request(url);
@@ -86,18 +81,17 @@ void login_window::onReplyFinished(QNetworkReply *reply) {
         notification->display("Error in network reply: " + reply->errorString());
         ui->loginwindow_username_input->clear();
         ui->loginwindow_userpassword_input->clear();
+        reply->deleteLater();
         return;
     }
 
     QByteArray responseData = reply->readAll();
-    if (login_Response_Check(responseData)) {
+    if (loginResponseCheck(responseData)) {
         dbg("Login successful!");
-        dbg("Hide Login Window...");
-        this->hide();
-        dbg("Display Userlist window");
+        hide();
+        userlist->getUsername(usernameA);
         userlist->show();
-    }
-    else {
+    } else {
         notification->display("Login failed.");
         dbg("Login failed.");
     }
@@ -106,14 +100,12 @@ void login_window::onReplyFinished(QNetworkReply *reply) {
     reply->deleteLater();
 }
 
-bool login_window::login_Response_Check(QByteArray& responseData) {
-    // return 1;
-
+bool login_window::loginResponseCheck(const QByteArray &responseData) {
     QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
     if (jsonResponse.isObject()) {
         QJsonObject jsonObject = jsonResponse.object();
         dbg("Check the Status from response...");
         return jsonObject.contains("Status") && jsonObject["Status"].toString() == "Login Successful";
     }
-    return 0;
+    return false;
 }

@@ -2,6 +2,7 @@
   /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
   /home/kechang/Project/Easychat/notification.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QDateTime \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QDebug \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QIODevice \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QList \
@@ -10,6 +11,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QPair \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QSharedDataPointer \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QString \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QTimer \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QUrl \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QVariant \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QVector \
@@ -26,6 +28,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qatomic.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qatomic_cxx11.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbasicatomic.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qbasictimer.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbindingstorage.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearray.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
@@ -119,6 +122,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtdeprecationmarkers.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtenvironmentvariables.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtextstream.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/qtimer.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtmetamacros.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtnoop.h \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/qtpreprocessorsupport.h \
@@ -190,6 +194,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QPushButton \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QTextEdit \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QToolButton \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QVBoxLayout \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QWidget \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractbutton.h \
@@ -205,6 +210,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtabwidget.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtextedit.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtoolbutton.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \

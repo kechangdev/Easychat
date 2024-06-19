@@ -5,6 +5,8 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QListWidgetItem>
+#include <QDateTime>
+#include <QDebug>
 
 namespace Ui {
 class UserList;
@@ -15,9 +17,7 @@ class UserList : public QDialog {
 
 public:
     explicit UserList(QWidget *parent = nullptr);
-    static void dbg(QString str) {
-        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
-    }
+    void getUsername(QString& _usernameA){usernameA = _usernameA;}
     ~UserList();
 
 public slots:
@@ -31,7 +31,11 @@ protected:
 private:
     Ui::UserList *ui;
     QNetworkAccessManager *networkManager;
-    const QString serverUrl = "http://your-server-url.com"; // Adjust as needed
+    const QString serverUrl = "https://chat.6b.fit";
+    QString usernameA;
+    static void dbg(const QString &str) {
+        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
+    }
 };
 
 #endif // USERLIST_H

@@ -1,5 +1,7 @@
 /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/EWIEGA46WW/moc_userlist.cpp: /home/kechang/Project/Easychat/userlist.h \
   /home/kechang/Project/Easychat/build/Desktop_Qt_6_7_1-Debug/Easychat_autogen/moc_predefs.h \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QDateTime \
+  /opt/Qt/6.7.1/gcc_64/include/QtCore/QDebug \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QFlags \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QIODevice \
   /opt/Qt/6.7.1/gcc_64/include/QtCore/QList \

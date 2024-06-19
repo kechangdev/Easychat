@@ -17,19 +17,21 @@ class SignupWindow : public QDialog {
 public:
     explicit SignupWindow(QWidget *parent = nullptr);
     ~SignupWindow();
-    static void dbg(QString str) {
+    void getUsername(QString& _usernameA){usernameA = _usernameA;}
+    static void dbg(const QString &str) {
         qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
     }
 
 private slots:
     void onAccepted();
-    bool signup_Response_Check(QByteArray& responseData);
+    bool signup_Response_Check(const QByteArray &responseData);
 
 private:
     Ui::SignupWindow *ui;
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "https://chat.6b.fit";
-    Notification *notification = new Notification;
+    Notification *notification;
+    QString usernameA;
 };
 
 #endif // SIGNUPWINDOW_H

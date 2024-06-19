@@ -18,16 +18,16 @@ class login_window : public QMainWindow {
     Q_OBJECT
 
 public:
-    login_window(QWidget *parent = nullptr);
-    static void dbg(QString str) {
-        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
+    explicit login_window(QWidget *parent = nullptr);
+    static void dbg(const QString &str) {
+        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO]" << str;
     }
     ~login_window();
 
 private slots:
     void onLoginButtonClicked();
     void onReplyFinished(QNetworkReply *reply);
-    bool login_Response_Check(QByteArray& responseData);
+    bool loginResponseCheck(const QByteArray &responseData);
     void onSignupLinkClicked();
 
 private:
@@ -35,7 +35,10 @@ private:
     SignupWindow *signupwindow;
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "https://chat.6b.fit";
-    Notification *notification = new Notification;
-    UserList *userlist = new UserList;
+    Notification *notification;
+    UserList *userlist;
+
+    QString usernameA;
 };
+
 #endif // LOGIN_WINDOW_H

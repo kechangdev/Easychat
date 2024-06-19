@@ -12,6 +12,9 @@
 #include <QVector>
 #include <QPair>
 #include <QDateTime>
+#include <QDebug>
+#include <QTimer>
+#include <QToolButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ChatWindow; }
@@ -23,7 +26,8 @@ class ChatWindow : public QMainWindow
 
 public:
     ChatWindow(const QString &username, QWidget *parent = nullptr);
-    static void dbg(QString str) {
+    void getUsername(QString& _usernameA) { usernameA = _usernameA; }
+    static void dbg(const QString &str) {
         qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
     }
     ~ChatWindow();
@@ -31,19 +35,27 @@ public:
 private slots:
     void sendMessage();
     void handleNetworkReply(QNetworkReply* reply);
+    void getChatHistory();
+    void handleHistoryReply(QNetworkReply* reply);
+    void startPolling();
+    void stopPolling();
+    void clearChatHistory();
+    void handleClearHistoryReply(QNetworkReply* reply);
 
 private:
     void displayMessages();
-
     Ui::ChatWindow *ui;
+    QString usernameA;
     QTextEdit *chatDisplay;
     QLineEdit *messageInput;
     QPushButton *sendButton;
+    QToolButton *clearButton;
     QNetworkAccessManager *networkManager;
     const QString serverUrl = "https://chat.6b.fit";
     QString username;
-    QVector<QPair<QDateTime, QString>> messages; // Stores messages with their timestamps
-    Notification *notification = new Notification;
+    QVector<QPair<QDateTime, QString>> messages;
+    Notification *notification;
+    QTimer *pollingTimer;
 };
 
 #endif // CHATWINDOW_H

@@ -28,10 +28,27 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QToolButton" name="clearButton">
+      <property name="text">
+       <string>Clear History</string>
+      </property>
+      <property name="icon">
+       <iconset resource="icons.qrc">
+        <normaloff>clear.png</normaloff>
+       </iconset>
+      </property>
+      <property name="autoRaise">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
 
