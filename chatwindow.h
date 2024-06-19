@@ -40,7 +40,7 @@ private:
     QLineEdit *messageInput;
     QPushButton *sendButton;
     QNetworkAccessManager *networkManager;
-    const QString serverUrl = "http://your-server-url.com";
+    const QString serverUrl = "https://chat.6b.fit/";
     QString username;
     QVector<QPair<QDateTime, QString>> messages; // Stores messages with their timestamps
     Notification *notification = new Notification;

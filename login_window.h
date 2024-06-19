@@ -34,7 +34,7 @@ private:
     Ui::login_window *ui;
     SignupWindow *signupwindow;
     QNetworkAccessManager *networkManager;
-    const QString serverUrl = "http://your-server-url.com";
+    const QString serverUrl = "https://chat.6b.fit/";
     Notification *notification = new Notification;
     UserList *userlist = new UserList;
 };

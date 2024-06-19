@@ -186,7 +186,7 @@
   /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkexports.h \
   /opt/Qt/6.7.1/gcc_64/include/QtNetwork/qtnetworkglobal.h \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QDialog \
-  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QListWidget \
+  /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QListWidgetItem \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/QWidget \
   /opt/Qt/6.7.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \

@@ -1,11 +1,10 @@
 #ifndef USERLIST_H
 #define USERLIST_H
 
-#include "notification.h"
 #include <QDialog>
-#include <QListWidget>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QListWidgetItem>
 
 namespace Ui {
 class UserList;
@@ -16,20 +15,20 @@ class UserList : public QDialog {
 
 public:
     explicit UserList(QWidget *parent = nullptr);
-    static void dbg(QString str) {
-        qDebug() << "[" << QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss") << "] [INFO] " << str;
-    }
     ~UserList();
 
-private slots:
-    void onAccountClicked(QListWidgetItem *item);
+public slots:
+    void fetchAccounts();
     void onAccountsFetched(QNetworkReply *reply);
+    void onAccountClicked(QListWidgetItem *item);
+
+protected:
+    void showEvent(QShowEvent *event) override;
 
 private:
-    void fetchAccounts();
     Ui::UserList *ui;
     QNetworkAccessManager *networkManager;
-    Notification *notification = new Notification;
+    const QString serverUrl = "https://chat.6b.fit";
 };
 
 #endif // USERLIST_H

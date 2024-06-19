@@ -1,10 +1,11 @@
 #include "userlist.h"
 #include "ui_userlist.h"
 #include "chatwindow.h"
-#include "notification.h"
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QListWidget>
+#include <QDebug>
 
 UserList::UserList(QWidget *parent) :
     QDialog(parent),
@@ -15,16 +16,20 @@ UserList::UserList(QWidget *parent) :
 
     connect(ui->accountListWidget, &QListWidget::itemClicked, this, &UserList::onAccountClicked);
     connect(networkManager, &QNetworkAccessManager::finished, this, &UserList::onAccountsFetched);
-
-    fetchAccounts();
 }
 
 UserList::~UserList() {
     delete ui;
+    delete networkManager;
+}
+
+void UserList::showEvent(QShowEvent *event) {
+    QDialog::showEvent(event);
+    fetchAccounts();
 }
 
 void UserList::fetchAccounts() {
-    QNetworkRequest request(QUrl("http://kechang.fun:5490/getAccounts"));
+    QNetworkRequest request{QUrl(serverUrl)};
     networkManager->get(request);
 }
 
@@ -40,7 +45,7 @@ void UserList::onAccountsFetched(QNetworkReply *reply) {
             ui->accountListWidget->addItem(obj["username"].toString());
         }
     } else {
-        // Handle error
+        qDebug() << "Network error:" << reply->errorString();
     }
     reply->deleteLater();
 }

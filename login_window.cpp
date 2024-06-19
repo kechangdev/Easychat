@@ -101,7 +101,8 @@ void login_window::onReplyFinished(QNetworkReply *reply) {
 }
 
 bool login_window::login_Response_Check(QByteArray& responseData) {
-    // return 1;
+    return 1;
+
     QJsonDocument jsonResponse = QJsonDocument::fromJson(responseData);
     if (jsonResponse.isObject()) {
         QJsonObject jsonObject = jsonResponse.object();

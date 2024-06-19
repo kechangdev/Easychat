@@ -71,7 +71,7 @@ void ChatWindow::handleNetworkReply(QNetworkReply* reply) {
         QJsonObject jsonObject = jsonResponse.object();
 
         QString message = jsonObject["message"].toString();
-        QString timeStr = jsonObject["timestamp"].toString(); // 假设服务器返回的JSON中有timestamp字段
+        QString timeStr = jsonObject["timestamp"].toString();
         QDateTime timestamp = QDateTime::fromString(timeStr, Qt::ISODate);
 
         messages.append(qMakePair(timestamp, message));
